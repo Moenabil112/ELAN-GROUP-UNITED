@@ -40,9 +40,9 @@ npm run start   # تشغيل بناء الإنتاج
 
 ## النشر على Vercel
 
-يتضمن المستودع ملف `vercel.json` يثبّت إطار العمل على `nextjs` (أمر البناء `next build`)، وهو ما يتجاوز أي إعداد قديم في لوحة Vercel كان يتوقع مجلد مخرجات ثابتاً (مثل `public`) من النسخة السكونية السابقة — لا حاجة لأي مجلد مخرجات يدوي. كل الصفحات مولّدة سكونياً.
+المشروع تطبيق Next.js قياسي — يجب أن يكون Framework Preset في Vercel هو **Next.js**، وأمر البناء `npm run build`، وحقل Output Directory **فارغاً** (لا يُضبط على `public` أبداً؛ مجلد `public` في Next.js للأصول الثابتة فقط وليس مخرجات البناء). يتضمن المستودع ملف `vercel.json` يثبّت هذه الإعدادات ويتجاوز أي إعداد قديم في اللوحة موروثاً من النسخة السكونية السابقة.
 
-إن استمر خطأ «No Output Directory» بعد إعادة النشر، فافتح إعدادات المشروع في Vercel → Build and Deployment، واضبط Framework Preset على **Next.js** وأزل أي Override لحقل Output Directory.
+إن استمر خطأ «No Output Directory named "public"» بعد إعادة النشر، فأزل أي Override يدوي لحقل Output Directory من إعدادات المشروع في Vercel (Settings → Build and Deployment). التفاصيل الكاملة في [`VERCEL_FIX.md`](./VERCEL_FIX.md).
 
 ## بنية المشروع
 
