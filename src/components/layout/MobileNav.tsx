@@ -17,7 +17,7 @@ export default function MobileNav() {
             className={`mobile-nav__link${pathname === item.href ? " is-active" : ""}`}
           >
             <NavIcon name={item.icon} />
-            {item.labelAr}
+            {item.shortAr}
           </Link>
         ))}
       </div>

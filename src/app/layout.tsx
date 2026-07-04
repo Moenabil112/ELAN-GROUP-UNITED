@@ -3,9 +3,9 @@ import "./globals.css";
 import AppShell from "@/components/layout/AppShell";
 
 export const metadata: Metadata = {
-  title: "ELAN Group United — كوكبت الذكاء المالي لأصحاب المصلحة",
+  title: "ELAN Group United — غرفة القيادة المالية لمنظومة إيلان",
   description:
-    "نافذة خاصة لأصحاب المصلحة — نموذج مالي 15 سنة لنافذة التشغيل المحلية",
+    "نافذة خاصة لأصحاب القرار والمصلحة — نموذج مالي بأفق 15 سنة لنافذة التشغيل المحلية",
   robots: { index: false, follow: false },
 };
 

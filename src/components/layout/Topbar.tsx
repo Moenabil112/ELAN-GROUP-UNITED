@@ -14,7 +14,7 @@ export default function Topbar({
         {subtitleAr ? <p>{subtitleAr}</p> : null}
       </div>
       <div className="topbar__badges">
-        <StatusBadge tone="gold" labelAr="نافذة خاصة بأصحاب المصلحة" />
+        <StatusBadge tone="gold" labelAr="نافذة خاصة بأصحاب القرار والمصلحة" />
         <StatusBadge tone="neutral" labelAr="أرقام توضيحية — الخيار B" />
       </div>
     </header>

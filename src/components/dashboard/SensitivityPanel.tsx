@@ -35,9 +35,9 @@ export default function SensitivityPanel() {
   return (
     <div className="chart-card">
       <div className="chart-card__head">
-        <h3 className="chart-card__title">حساسية الاسترداد بين السيناريوهات</h3>
+        <h3 className="chart-card__title">مقارنة السيناريوهات المالية</h3>
         <span className="chart-card__sub">
-          تراكمي توزيعات المستثمر مقابل رأس مال الدخول (100 مليون ريال)
+          تراكمي حصة الشريك من التوزيعات مقابل رأس مال الدخول (100 مليون ريال)
         </span>
       </div>
       <ResponsiveContainer width="100%" height={250}>
@@ -70,8 +70,8 @@ export default function SensitivityPanel() {
               <th>السيناريو</th>
               <th>الإيراد التراكمي</th>
               <th>التدفق التراكمي</th>
-              <th>توزيعات المستثمر التراكمية</th>
-              <th>سنة الاسترداد النموذجية</th>
+              <th>حصة الشريك التراكمية</th>
+              <th>استرداد رأس المال</th>
             </tr>
           </thead>
           <tbody>

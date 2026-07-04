@@ -43,7 +43,7 @@ export default function UseOfFundsChart() {
   return (
     <div className="chart-card" style={{ display: "flex", flexDirection: "column" }}>
       <div className="chart-card__head">
-        <h3 className="chart-card__title">استخدام رأس المال</h3>
+        <h3 className="chart-card__title">توظيف رأس المال</h3>
         <span className="chart-card__sub">100 مليون ريال · ستة مراكز</span>
       </div>
       <div style={{ position: "relative", flex: 1, minHeight: 230 }}>

@@ -11,7 +11,7 @@ export default function Sidebar() {
     <aside className="sidebar">
       <div className="sidebar__brand">
         <span className="sidebar__entity num">ELAN GROUP UNITED</span>
-        <span className="sidebar__tag">كوكبت أصحاب المصلحة — نافذة خاصة</span>
+        <span className="sidebar__tag">غرفة قيادة أصحاب القرار — نافذة خاصة</span>
       </div>
       <nav className="sidebar__nav" aria-label="التنقل الرئيسي">
         {NAV_ITEMS.map((item) => (
@@ -26,8 +26,8 @@ export default function Sidebar() {
         ))}
       </nav>
       <div className="sidebar__foot">
-        نافذة داخلية لأصحاب المصلحة — ليست دعوة استثمار عامة. جميع الأرقام
-        توضيحية وخاضعة للمراجعة المهنية المستقلة.
+        نافذة داخلية لأصحاب القرار والمصلحة — ليست دعوة استثمار عامة. جميع
+        الأرقام توضيحية وخاضعة لعناية مالية وقانونية وتشغيلية مستقلة.
       </div>
     </aside>
   );

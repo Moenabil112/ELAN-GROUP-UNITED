@@ -3,10 +3,11 @@ import { REVIEW_PATH } from "@/data/reviewPath";
 export default function ReviewPath() {
   return (
     <div className="review-panel">
-      <h3>مسار المراجعة الرسمي</h3>
+      <h3>مسار المراجعة والقرار</h3>
       <p>
         عملية داخلية منضبطة من ثماني خطوات تنقل الطرف المراجع من الاطلاع إلى
-        قرار موثق — لا التزام قبل اكتمال العناية المستقلة.
+        قرار موثق — لا التزام قبل اكتمال العناية المالية والقانونية والتشغيلية
+        المستقلة.
       </p>
       <ol className="review-steps">
         {REVIEW_PATH.map((s) => (

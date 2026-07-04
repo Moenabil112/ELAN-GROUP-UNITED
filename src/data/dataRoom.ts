@@ -9,7 +9,7 @@ export const DATA_ROOM_DOCUMENTS: DataRoomDocument[] = [
     id: "financial-model",
     titleAr: "النموذج المالي",
     typeAr: "نموذج تشغيلي — 15 سنة",
-    purposeAr: "السيناريوهات الثلاثة كاملة بافتراضاتها وحساسية الاسترداد.",
+    purposeAr: "السيناريوهات الثلاثة كاملة بافتراضاتها وحساسية استرداد رأس المال.",
     status: "جاهز للمراجعة",
   },
   {

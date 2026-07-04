@@ -6,24 +6,24 @@ import ReviewPath from "@/components/data-room/ReviewPath";
 import DisclaimerBlock from "@/components/shared/DisclaimerBlock";
 
 export const metadata: Metadata = {
-  title: "غرفة البيانات — ELAN Group United",
+  title: "غرفة البيانات والمستندات — ELAN Group United",
 };
 
 export default function DataRoomPage() {
   return (
     <>
       <Topbar
-        titleAr="غرفة البيانات"
-        subtitleAr="ثماني وثائق مرجعية خلف صلاحية وصول — الفتح يتطلب اتفاقية سرية"
+        titleAr="غرفة البيانات والمستندات"
+        subtitleAr="طبقة مراجعة خاصة — الفتح يتطلب اتفاقية سرية وصلاحية معتمدة"
       />
       <SectionHeader
-        kickerAr="بوابة الوثائق"
+        kickerAr="طبقة التعمق المالي"
         titleAr="التحقق قبل الالتزام"
-        descAr="كل رقم في النموذج يقابله ملف مرجعي في هذه الغرفة. الوصول مضبوط وموثق، ولا يُفتح إلا ضمن مسار المراجعة الرسمي."
+        descAr="غرفة البيانات والمستندات هي طبقة مراجعة خاصة لا تعرض الملفات للعامة. يتم من خلالها تنظيم النموذج المالي، الافتراضات، سجل المخاطر، ملحق استخدام رأس المال، ومذكرة الشروط غير الملزمة."
       />
       <DataRoomGateway />
       <SectionHeader
-        kickerAr="العملية"
+        kickerAr="مسار المراجعة والقرار"
         titleAr="من الاطلاع إلى القرار"
       />
       <ReviewPath />

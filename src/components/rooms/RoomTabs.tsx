@@ -12,7 +12,7 @@ export default function RoomTabs() {
 
   return (
     <div>
-      <div className="room-tabs" role="tablist" aria-label="غرف أصحاب المصلحة">
+      <div className="room-tabs" role="tablist" aria-label="غرف أصحاب القرار والمصلحة">
         {STAKEHOLDER_ROOMS.map((room) => (
           <button
             key={room.id}

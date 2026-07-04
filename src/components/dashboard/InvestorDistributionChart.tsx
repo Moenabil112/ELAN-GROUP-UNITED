@@ -1,6 +1,6 @@
 "use client";
 
-/** توزيعات المستثمر السنوية (30% من نافذة التشغيل المحلية) */
+/** حصة الشريك من التوزيعات السنوية (30% من نافذة التشغيل المحلية) */
 
 import {
   ResponsiveContainer,
@@ -22,7 +22,7 @@ export default function InvestorDistributionChart({ rows }: { rows: YearRow[] })
   return (
     <div className="chart-card">
       <div className="chart-card__head">
-        <h3 className="chart-card__title">حصة المستثمر من التوزيعات السنوية</h3>
+        <h3 className="chart-card__title">حصة الشريك من التوزيعات السنوية</h3>
         <span className="chart-card__sub">
           30% من توزيعات نافذة التشغيل المحلية · مليون ريال
         </span>
@@ -35,14 +35,14 @@ export default function InvestorDistributionChart({ rows }: { rows: YearRow[] })
           <Tooltip content={<ChartTooltip />} cursor={{ fill: "rgba(240,235,221,0.05)" }} />
           <Bar
             dataKey="investor"
-            name="حصة المستثمر"
+            name="حصة الشريك"
             fill={CHART.gold}
             radius={[4, 4, 0, 0]}
             maxBarSize={16}
           />
         </BarChart>
       </ResponsiveContainer>
-      <ChartLegend items={[{ labelAr: "توزيعات المستثمر السنوية", color: CHART.gold }]} />
+      <ChartLegend items={[{ labelAr: "حصة الشريك من التوزيعات السنوية", color: CHART.gold }]} />
     </div>
   );
 }
