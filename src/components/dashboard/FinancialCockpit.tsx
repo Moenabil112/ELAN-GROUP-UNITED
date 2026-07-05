@@ -23,7 +23,6 @@ import {
 import { validateFinancialInputs } from "@/lib/validators";
 import { toMillions } from "@/lib/formatters";
 
-import Topbar from "@/components/layout/Topbar";
 import SectionHeader from "@/components/shared/SectionHeader";
 import DisclaimerBlock from "@/components/shared/DisclaimerBlock";
 import StatusBadge from "@/components/shared/StatusBadge";
@@ -46,11 +45,6 @@ export default function FinancialCockpit() {
 
   return (
     <>
-      <Topbar
-        titleAr="غرفة القيادة المالية لمنظومة إيلان"
-        subtitleAr="نافذة خاصة لأصحاب القرار والمصلحة · ELAN Group United"
-      />
-
       {/* إطار الدخول المعتمد — لا يتغير بالسيناريو */}
       <section className="cockpit-hero" aria-label="إطار الدخول">
         <div className="cockpit-hero__label">إطار الدخول المعتمد — الخيار B</div>
@@ -97,47 +91,6 @@ export default function FinancialCockpit() {
           <DisclaimerBlock />
         </div>
       </section>
-
-      {/* مدخل القرار + تعريف إيلان */}
-      <div className="chart-grid" style={{ marginTop: "1.25rem" }}>
-        <div className="card">
-          <span className="section-header__kicker">مدخل القرار الاستثماري</span>
-          <h2 style={{ fontSize: "1.1rem", fontWeight: 600, marginTop: "0.3rem" }}>
-            لماذا هذه النافذة؟
-          </h2>
-          <p
-            style={{
-              marginTop: "0.6rem",
-              fontSize: "0.88rem",
-              color: "var(--ink-on-dark-soft)",
-            }}
-          >
-            التعدين قطاع كثيف رأس المال، وقراراته المبكرة قد تستهلك الأموال قبل
-            أن تتضح الصورة. صاحب القرار غير المتخصص لا ينقصه رأس المال، بل
-            تنقصه رؤية قرار منظمة: أين تذهب الأموال، وما الذي يُبنى بها، ومتى
-            يتوقف الصرف. هذه النافذة تمنحه تلك الرؤية قبل أي التزام — دخول
-            استراتيجي محلي منضبط، لا فرصة عابرة.
-          </p>
-        </div>
-        <div className="card">
-          <span className="section-header__kicker">ما الذي تبنيه إيلان؟</span>
-          <h2 style={{ fontSize: "1.1rem", fontWeight: 600, marginTop: "0.3rem" }}>
-            إيلان كمنظومة تشغيل تعدين ذكية
-          </h2>
-          <p
-            style={{
-              marginTop: "0.6rem",
-              fontSize: "0.88rem",
-              color: "var(--ink-on-dark-soft)",
-            }}
-          >
-            لا تُعرض إيلان هنا كتطبيق أو واجهة تقنية منفصلة، بل كمنظومة تشغيل
-            تعدين ذكية تربط قراءة الأرض، البيانات، الحوكمة، التشغيل الميداني،
-            ومسارات الإيراد داخل غرفة قرار واحدة. الهدف هو مساعدة أصحاب القرار
-            على فهم المخاطر، مراقبة رأس المال، وقياس التقدم قبل التوسع.
-          </p>
-        </div>
-      </div>
 
       {/* محرك السيناريوهات — لاصق */}
       <ScenarioSelector

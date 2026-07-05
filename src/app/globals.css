@@ -1164,6 +1164,333 @@ button {
   flex-shrink: 0;
 }
 
+/* محوّل الأوضاع: الفهم → التحقق → القرار */
+.mode-switch {
+  margin-bottom: 1.5rem;
+}
+
+.mode-switch__tabs {
+  display: flex;
+  gap: 0.4rem;
+  background: var(--surface);
+  border: 1px solid var(--green-line);
+  border-radius: var(--radius);
+  padding: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.mode-switch__tab {
+  flex: 1 1 160px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--ink-on-dark-soft);
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.mode-switch__tab:hover {
+  color: var(--ink-on-dark);
+}
+
+.mode-switch__tab.is-active {
+  background: var(--gold);
+  color: #14100a;
+  font-weight: 600;
+}
+
+.mode-switch__step {
+  display: inline-grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid currentColor;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.mode-switch__desc {
+  margin-top: 0.5rem;
+  font-size: 0.76rem;
+  color: var(--ink-on-dark-faint);
+  padding-inline: 0.4rem;
+}
+
+/* خريطة القرار */
+.dmap-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+.dmap-card {
+  background: var(--surface);
+  border: 1px solid var(--green-line);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.dmap-card__title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.dmap-card__summary {
+  font-size: 0.84rem;
+  color: var(--ink-on-dark-soft);
+  line-height: 1.85;
+}
+
+.dmap-card__block {
+  border-top: 1px dashed var(--green-line);
+  padding-top: 0.8rem;
+}
+
+.dmap-card__label {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 0.45rem;
+}
+
+.dmap-card__block ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.dmap-card__block li {
+  font-size: 0.8rem;
+  color: var(--ink-on-dark-soft);
+  padding-inline-start: 1rem;
+  position: relative;
+}
+
+.dmap-card__block li::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 0.65em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold);
+  opacity: 0.7;
+}
+
+.dmap-card__foot {
+  border-top: 1px dashed var(--green-line);
+  padding-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dmap-card__action {
+  font-size: 0.78rem;
+  color: var(--ink-on-dark-soft);
+}
+
+.dmap-card__action strong {
+  color: var(--gold);
+  font-size: 0.72rem;
+}
+
+/* شرائح الوثائق */
+.doc-chips {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.doc-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.76rem;
+  color: var(--ink-on-dark-soft);
+  border: 1px solid var(--green-line);
+  border-radius: 100px;
+  padding: 0.32rem 0.8rem;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.doc-chip:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.doc-chip__num {
+  font-size: 0.64rem;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* نظرة على الحزم — وضع الفهم */
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.8rem;
+}
+
+.pkg-card {
+  background: var(--surface);
+  border: 1px solid var(--green-line);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.pkg-card:hover {
+  border-color: rgba(201, 169, 107, 0.45);
+  transform: translateY(-2px);
+}
+
+.pkg-card__title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.55;
+  flex: 1;
+}
+
+.pkg-card__count {
+  font-size: 0.7rem;
+  color: var(--ink-on-dark-faint);
+}
+
+.mode-next {
+  margin-top: 2rem;
+  background: linear-gradient(160deg, rgba(201, 169, 107, 0.1), transparent);
+  border: 1px solid rgba(201, 169, 107, 0.25);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.mode-next p {
+  font-size: 0.88rem;
+  color: var(--ink-on-dark-soft);
+  max-width: 60ch;
+}
+
+/* وضع القرار */
+.open-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.open-items li {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding-block: 0.85rem;
+  border-bottom: 1px solid rgba(240, 235, 221, 0.06);
+}
+
+.open-items li:last-child {
+  border-bottom: none;
+}
+
+.open-items__num {
+  display: inline-grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 169, 107, 0.45);
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.open-items__text {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.decision-steps {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.decision-step {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--green-line);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.1rem;
+}
+
+.decision-step .review-step__num {
+  background: var(--gold);
+  color: #14100a;
+  flex-shrink: 0;
+  margin-bottom: 0;
+}
+
+.decision-step__title {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.decision-step__desc {
+  font-size: 0.78rem;
+  color: var(--ink-on-dark-soft);
+  margin-top: 0.2rem;
+  line-height: 1.75;
+}
+
+.decision-actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .dmap-grid {
+    grid-template-columns: 1fr;
+  }
+  .pkg-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .pkg-grid,
+  .decision-steps {
+    grid-template-columns: 1fr;
+  }
+  .decision-actions {
+    flex-direction: column;
+  }
+}
+
 /* مستكشف غرفة البيانات */
 .dre-toolbar {
   display: flex;

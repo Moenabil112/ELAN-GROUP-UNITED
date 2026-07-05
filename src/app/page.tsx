@@ -1,5 +1,5 @@
-import FinancialCockpit from "@/components/dashboard/FinancialCockpit";
+import CockpitExperience from "@/components/experience/CockpitExperience";
 
 export default function CockpitPage() {
-  return <FinancialCockpit />;
+  return <CockpitExperience />;
 }
