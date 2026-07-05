@@ -1014,6 +1014,289 @@ button {
   flex: 1;
 }
 
+/* سجل المرحلة الأولى — الحزم والوثائق */
+.bundle-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.bundle {
+  background: var(--surface);
+  border: 1px solid var(--green-line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.bundle summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  transition: background 0.2s ease;
+}
+
+.bundle summary::-webkit-details-marker {
+  display: none;
+}
+
+.bundle summary:hover {
+  background: rgba(240, 235, 221, 0.04);
+}
+
+.bundle summary:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -2px;
+}
+
+.bundle__num {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gold);
+  border: 1px solid rgba(201, 169, 107, 0.4);
+  border-radius: 8px;
+  padding: 0.3rem 0.6rem;
+  flex-shrink: 0;
+}
+
+.bundle__titles {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.bundle__title-ar {
+  font-size: 0.98rem;
+  font-weight: 600;
+}
+
+.bundle__title-en {
+  font-size: 0.68rem;
+  color: var(--ink-on-dark-faint);
+  letter-spacing: 0.04em;
+}
+
+.bundle__count {
+  font-size: 0.72rem;
+  color: var(--ink-on-dark-soft);
+  white-space: nowrap;
+}
+
+.bundle__chevron {
+  width: 9px;
+  height: 9px;
+  border-inline-start: 1.5px solid var(--ink-on-dark-faint);
+  border-bottom: 1.5px solid var(--ink-on-dark-faint);
+  transform: rotate(-45deg);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.bundle[open] .bundle__chevron {
+  transform: rotate(135deg);
+}
+
+.bundle__body {
+  padding: 0.25rem 1.4rem 1.25rem;
+  border-top: 1px dashed var(--green-line);
+}
+
+.bundle__rel {
+  font-size: 0.78rem;
+  color: var(--ink-on-dark-soft);
+  padding-block: 0.9rem 0.6rem;
+}
+
+.bundle__rel strong {
+  color: var(--gold);
+  font-size: 0.72rem;
+}
+
+.doc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-link {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 0.65rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border-bottom: 1px solid rgba(240, 235, 221, 0.05);
+  transition: background 0.2s ease;
+}
+
+.doc-link:hover {
+  background: rgba(240, 235, 221, 0.05);
+}
+
+.doc-link__num {
+  font-size: 0.7rem;
+  color: var(--ink-on-dark-faint);
+  width: 1.6rem;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.doc-link__titles {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-link__ar {
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.doc-link__en {
+  font-size: 0.66rem;
+  color: var(--ink-on-dark-faint);
+}
+
+.doc-link__meta {
+  flex-shrink: 0;
+}
+
+/* عارض الوثيقة */
+.doc-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  color: var(--ink-on-dark-soft);
+  margin-bottom: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.doc-breadcrumb a {
+  color: var(--gold);
+}
+
+.doc-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.doc-head h1 {
+  font-size: clamp(1.3rem, 2.6vw, 1.8rem);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.doc-head__en {
+  font-size: 0.85rem;
+  color: var(--ink-on-dark-faint);
+  margin-top: 0.2rem;
+}
+
+.doc-head__badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.doc-content {
+  margin-top: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--green-line);
+  border-radius: var(--radius);
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  font-size: 0.9rem;
+  line-height: 1.85;
+  color: var(--ink-on-dark-soft);
+  overflow-wrap: break-word;
+}
+
+.doc-content h1,
+.doc-content h2,
+.doc-content h3,
+.doc-content h4 {
+  color: var(--ink-on-dark);
+  line-height: 1.5;
+  margin: 1.6em 0 0.5em;
+  font-weight: 600;
+}
+
+.doc-content h1 {
+  font-size: 1.45rem;
+  margin-top: 0;
+}
+
+.doc-content h2 {
+  font-size: 1.2rem;
+}
+
+.doc-content h3 {
+  font-size: 1.02rem;
+  color: var(--gold);
+}
+
+.doc-content p,
+.doc-content ul,
+.doc-content ol {
+  margin-block: 0.7em;
+}
+
+.doc-content ul,
+.doc-content ol {
+  padding-inline-start: 1.5rem;
+}
+
+.doc-content strong {
+  color: var(--ink-on-dark);
+}
+
+.doc-content hr {
+  border: none;
+  border-top: 1px dashed var(--green-line);
+  margin-block: 1.75rem;
+}
+
+.doc-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: 1.1em;
+  font-size: 0.8rem;
+  display: block;
+  overflow-x: auto;
+}
+
+.doc-content th,
+.doc-content td {
+  border: 1px solid var(--green-line);
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.doc-content th {
+  background: rgba(240, 235, 221, 0.05);
+  color: var(--ink-on-dark);
+  font-weight: 600;
+}
+
+.doc-content code {
+  font-family: var(--font-num);
+  font-size: 0.82em;
+  background: rgba(240, 235, 221, 0.08);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+}
+
+.doc-content blockquote {
+  border-inline-start: 3px solid var(--gold);
+  padding-inline-start: 1rem;
+  margin-block: 1em;
+  color: var(--ink-on-dark-soft);
+}
+
 /* مسار المراجعة — لوح رملي */
 .review-panel {
   background: var(--sand);
