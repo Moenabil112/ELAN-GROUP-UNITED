@@ -1,33 +1,71 @@
-import type { DataRoomDocument } from "@/types/stakeholder";
-import { ACCESS_REQUIRED_AR } from "@/data/dataRoom";
-import StatusBadge from "@/components/shared/StatusBadge";
+"use client";
 
-const STATUS_TONE: Record<string, "ok" | "warn" | "high"> = {
-  "جاهز للمراجعة": "ok",
-  "قيد الإعداد": "warn",
-  "يتطلب تحديثاً": "high",
+/** بطاقة وثيقة في مستكشف غرفة البيانات */
+
+import type { DataRoomDocumentEntry } from "@/types/dataRoom";
+import StatusBadge from "@/components/shared/StatusBadge";
+import DocumentStatusBadge from "./DocumentStatusBadge";
+import AccessLevelBadge from "./AccessLevelBadge";
+
+export const PRIORITY_AR: Record<string, string> = {
+  High: "أولوية عالية",
+  Medium: "أولوية متوسطة",
+  Standard: "أولوية قياسية",
 };
 
-export default function DocumentCard({ doc }: { doc: DataRoomDocument }) {
+const PRIORITY_TONE = {
+  High: "high",
+  Medium: "warn",
+  Standard: "neutral",
+} as const;
+
+export default function DocumentCard({
+  doc,
+  onOpen,
+}: {
+  doc: DataRoomDocumentEntry;
+  onOpen: (id: string) => void;
+}) {
   return (
-    <article className="doc-card">
-      <span className="doc-card__lock">
+    <article className="dre-card">
+      <div className="dre-card__num-row">
+        <span className="dre-card__num num">
+          {doc.bundleNumber}·{doc.docNumber}
+        </span>
+        {doc.priority ? (
+          <StatusBadge
+            tone={PRIORITY_TONE[doc.priority]}
+            labelAr={PRIORITY_AR[doc.priority]}
+          />
+        ) : (
+          <StatusBadge tone="neutral" labelAr="دليل الحزمة" />
+        )}
+      </div>
+      <h4 className="dre-card__title-ar">{doc.titleAr}</h4>
+      <p className="dre-card__title-en num">{doc.title}</p>
+      <p className="dre-card__purpose">{doc.purpose}</p>
+      <div className="dre-card__badges">
+        <DocumentStatusBadge status={doc.status} />
+        <AccessLevelBadge level={doc.accessLevel} />
+      </div>
+      <button
+        type="button"
+        className="dre-card__open"
+        onClick={() => onOpen(doc.id)}
+      >
+        فتح الوثيقة
         <svg
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
           strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           aria-hidden="true"
         >
-          <rect x="5" y="10" width="14" height="10" rx="1.5" />
-          <path d="M8 10V7a4 4 0 018 0v3" />
+          <path d="M14 5l-7 7 7 7" />
         </svg>
-        {ACCESS_REQUIRED_AR}
-      </span>
-      <h3 className="doc-card__title">{doc.titleAr}</h3>
-      <span className="doc-card__type">{doc.typeAr}</span>
-      <p className="doc-card__purpose">{doc.purposeAr}</p>
-      <StatusBadge tone={STATUS_TONE[doc.status]} labelAr={doc.status} />
+      </button>
     </article>
   );
 }
