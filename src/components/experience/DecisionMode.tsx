@@ -6,38 +6,28 @@
  */
 
 import Link from "next/link";
-import { OPEN_ITEMS_AR, TERM_SHEET_PATH_DOC_IDS } from "@/data/decisionMap";
+import { TERM_SHEET_PATH_DOC_IDS } from "@/data/decisionMap";
 import { REVIEW_PATH } from "@/data/reviewPath";
 import {
   DATA_ROOM_BUNDLES,
   DATA_ROOM_DOCUMENT_COUNT,
 } from "@/data/dataRoomIndex";
 import SectionHeader from "@/components/shared/SectionHeader";
-import StatusBadge from "@/components/shared/StatusBadge";
 import DisclaimerBlock from "@/components/shared/DisclaimerBlock";
 import FinancialMetricCard from "@/components/dashboard/FinancialMetricCard";
+import OpenItemsRegister from "@/components/review/OpenItemsRegister";
 import DocChips from "./DocChips";
 
 export default function DecisionMode() {
   return (
     <div>
-      {/* البنود المفتوحة */}
+      {/* سجل النواقص */}
       <SectionHeader
-        kickerAr="البنود المفتوحة"
+        kickerAr="سجل النواقص ومسار الاستكمال"
         titleAr="ما الذي يقف بين الاطلاع والقرار؟"
-        descAr="خمسة بنود مفتوحة — لكل بند جهة مسؤولة. لا قرار نهائي قبل إغلاقها عبر مسار المراجعة."
+        descAr="بنود مفتوحة موحدة عبر الحزم الثماني — لكل بند فئة ومالك وإجراء وتاريخ مستهدف مبدئيان. لا قرار نهائي قبل إغلاقها عبر مسار المراجعة."
       />
-      <div className="card">
-        <ul className="open-items">
-          {OPEN_ITEMS_AR.map((item, i) => (
-            <li key={item.itemAr}>
-              <span className="open-items__num num">{i + 1}</span>
-              <span className="open-items__text">{item.itemAr}</span>
-              <StatusBadge tone="gold" labelAr={item.ownerAr} />
-            </li>
-          ))}
-        </ul>
-      </div>
+      <OpenItemsRegister compact />
 
       {/* خطوات المراجعة المطلوبة */}
       <SectionHeader
